@@ -112,13 +112,14 @@ namespace Editor_de_Grafos
                 List<AGM> VerticeAresta = new List<AGM>();
                 foreach (int x in vertices) // busca em todos os vertices q já foram visitados que tem peso e armazena eles em uma outra lista
                 {
+                    
                     for (int i = 0; i < getN(); i++)
                     {
                         // se I é adjacente a V e I ainda não foi visitado
                         if (matAdj[x, i] != null && !visitado[i])
                         {
                             VerticeAresta.Add(new AGM(matAdj[x, i], i, matAdj[x, i].getPeso()));
-                        }
+                        }                        
                     }
                 }                  
                 
@@ -406,17 +407,15 @@ namespace Editor_de_Grafos
             }
         }        
 
-        // OBS: O V1 tem valor 0
-        // Talvez arrumar ...
         public String paresOrdenados()
         {
             string msg = "";
             for (int i = 0; i < matAdj.GetLength(0); i++)
                 for (int j = 0; j < matAdj.GetLength(0); j++)
                     if (matAdj[i, j] != null)
-                        msg += "(" + (i + 1) + "," + (j + 1) + "), "; // i + 1 por que o V1 é igual a 0
+                        msg += $"({i},{j}) ";
 
-            return msg.Remove(msg.Length - 2) + ".";
+            return msg.Trim();
         }            
         
         // OBS: Não deu pra colocar o bool[] visitado na classe Grafo, motivos:
@@ -509,7 +508,6 @@ namespace Editor_de_Grafos
                                 }
                             }
                         }
-
                         
                         bool existeCor = false;
                         // verifica se existe pelo menos uma cor que não é usada pelos vizinhos

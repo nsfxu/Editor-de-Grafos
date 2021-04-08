@@ -337,8 +337,8 @@ namespace Editor_de_Grafos
 
         protected override void OnMouseClick(MouseEventArgs e)
         {
-            base.OnMouseClick(e);
-            AddVertice((n++), "V" + n, e.X, e.Y);
+            base.OnMouseClick(e);          
+            AddVertice((n++), "V" + (n - 1), e.X, e.Y);
         }
     }
 }
