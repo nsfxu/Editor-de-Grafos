@@ -111,8 +111,7 @@ namespace Editor_de_Grafos
             {
                 List<AGM> VerticeAresta = new List<AGM>();
                 foreach (int x in vertices) // busca em todos os vertices q já foram visitados que tem peso e armazena eles em uma outra lista
-                {
-                    
+                {                    
                     for (int i = 0; i < getN(); i++)
                     {
                         // se I é adjacente a V e I ainda não foi visitado
@@ -131,7 +130,7 @@ namespace Editor_de_Grafos
                     if (flag == 1) // o primeiro valor da aresta é definido como menor
                     {
                         menor = item;
-                        flag = 0;
+                        flag = 0; // trava esse if
                     }
                     
                     if (item.getPeso() < menor.getPeso()) // verifica se o peso é menor que o atual menor
@@ -165,7 +164,7 @@ namespace Editor_de_Grafos
             bool[] visitado = new bool[getN()];
             int fechados = 0;
 
-            // pega todos os vertices e coloca naquela tabela | PRONTO
+            // pega todos os vertices e coloca naquela tabela
             for (int x = 0; x < getN(); x++)
             {
                 for (int z = 0; z < getN(); z++)
@@ -178,7 +177,7 @@ namespace Editor_de_Grafos
                 }
             }
 
-            // Pega o indice e define o antecessor igual a ele mesmo | PRONTO
+            // Pega o indice e define o antecessor igual a ele mesmo 
             foreach (var item in CM)
             {
                 if (item.Vertice == i)
@@ -196,9 +195,8 @@ namespace Editor_de_Grafos
                     fechados++;
             }
 
-            // selecione o vertice com a menor estimativa 
-            // ainda em aberto
-            while(fechados != getN())
+            // selecione o vertice com a menor estimativa ainda em aberto
+            while (fechados != getN())
             {
                 CustoMinimo menor = null;
                 int flag = 1; 
@@ -213,8 +211,6 @@ namespace Editor_de_Grafos
                     else if(flag == 0 && item.Estimativa < menor.Estimativa && item.Fechado != true)
                         menor = item;
                     // compara o item atual com o menor valor
-
-
                 }
 
                 // marca como true o menor valor
@@ -538,5 +534,6 @@ namespace Editor_de_Grafos
 
             return lCores.Count; // retorna o número de cores
         }
+     
     }
 }

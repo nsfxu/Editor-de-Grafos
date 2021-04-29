@@ -134,6 +134,7 @@ namespace Editor_de_Grafos
 
             MessageBox.Show("O valor do número cromático é: " + g.numeroCromatico(), "Número Cromático", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        
 
         #endregion --------------------------------------------------------------------------------------------------
 
@@ -286,6 +287,7 @@ namespace Editor_de_Grafos
         {
             MessageBox.Show("Editor de Grafos - 2021/1\n\nDesenvolvido por: \nGiusier Ferreira Soares 72000635\nNatan Macedo de Magalhaes\nVirgilio Borges de Oliveira\n\nAlgoritmos e Estruturas de Dados II\nFaculdade COTEMIG\nSomente para fins didáticos.", "Sobre o Editor de Grafos...", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
 
         #endregion --------------------------------------------------------------------------------------------------     
 

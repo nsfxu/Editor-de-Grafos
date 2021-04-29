@@ -47,6 +47,7 @@ namespace Editor_de_Grafos
             this.btBuscaLargura = new System.Windows.Forms.ToolStripMenuItem();
             this.btAGM = new System.Windows.Forms.ToolStripMenuItem();
             this.btCaminhoMinimo = new System.Windows.Forms.ToolStripMenuItem();
+            this.btNumCromatico = new System.Windows.Forms.ToolStripMenuItem();
             this.ferramentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btDefineRotulo = new System.Windows.Forms.ToolStripMenuItem();
             this.BtPeso = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,7 @@ namespace Editor_de_Grafos
             this.OPFile = new System.Windows.Forms.OpenFileDialog();
             this.SVFile = new System.Windows.Forms.SaveFileDialog();
             this.g = new Editor_de_Grafos.Grafo();
-            this.btNumCromatico = new System.Windows.Forms.ToolStripMenuItem();
+            this.btIndiceCromatico = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,7 +98,7 @@ namespace Editor_de_Grafos
             // 
             this.BtNovo.Name = "BtNovo";
             this.BtNovo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.BtNovo.Size = new System.Drawing.Size(180, 22);
+            this.BtNovo.Size = new System.Drawing.Size(146, 22);
             this.BtNovo.Text = "Novo";
             this.BtNovo.Click += new System.EventHandler(this.BtNovo_Click);
             // 
@@ -105,7 +106,7 @@ namespace Editor_de_Grafos
             // 
             this.BtAbrir.Name = "BtAbrir";
             this.BtAbrir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.BtAbrir.Size = new System.Drawing.Size(180, 22);
+            this.BtAbrir.Size = new System.Drawing.Size(146, 22);
             this.BtAbrir.Text = "Abrir";
             this.BtAbrir.Click += new System.EventHandler(this.BtAbrir_Click);
             // 
@@ -113,20 +114,20 @@ namespace Editor_de_Grafos
             // 
             this.BtSalvar.Name = "BtSalvar";
             this.BtSalvar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.BtSalvar.Size = new System.Drawing.Size(180, 22);
+            this.BtSalvar.Size = new System.Drawing.Size(146, 22);
             this.BtSalvar.Text = "Salvar";
             this.BtSalvar.Click += new System.EventHandler(this.BtSalvar_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
             // 
             // BtSair
             // 
             this.BtSair.Name = "BtSair";
             this.BtSair.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.X)));
-            this.BtSair.Size = new System.Drawing.Size(180, 22);
+            this.BtSair.Size = new System.Drawing.Size(146, 22);
             this.BtSair.Text = "Sair";
             this.BtSair.Click += new System.EventHandler(this.BtSair_Click);
             // 
@@ -141,7 +142,8 @@ namespace Editor_de_Grafos
             this.btBuscaLargura,
             this.btAGM,
             this.btCaminhoMinimo,
-            this.btNumCromatico});
+            this.btNumCromatico,
+            this.btIndiceCromatico});
             this.algoritmosToolStripMenuItem.Name = "algoritmosToolStripMenuItem";
             this.algoritmosToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.algoritmosToolStripMenuItem.Text = "&Algoritmos";
@@ -199,6 +201,13 @@ namespace Editor_de_Grafos
             this.btCaminhoMinimo.Size = new System.Drawing.Size(180, 22);
             this.btCaminhoMinimo.Text = "Caminho Mínino";
             this.btCaminhoMinimo.Click += new System.EventHandler(this.btCaminhoMinimo_Click);
+            // 
+            // btNumCromatico
+            // 
+            this.btNumCromatico.Name = "btNumCromatico";
+            this.btNumCromatico.Size = new System.Drawing.Size(180, 22);
+            this.btNumCromatico.Text = "Número Cromático";
+            this.btNumCromatico.Click += new System.EventHandler(this.btNumCromatico_Click);
             // 
             // ferramentasToolStripMenuItem
             // 
@@ -299,7 +308,7 @@ namespace Editor_de_Grafos
             // 
             this.BtSobre.Name = "BtSobre";
             this.BtSobre.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.BtSobre.Size = new System.Drawing.Size(180, 22);
+            this.BtSobre.Size = new System.Drawing.Size(123, 22);
             this.BtSobre.Text = "Sobre";
             this.BtSobre.Click += new System.EventHandler(this.BtSobre_Click);
             // 
@@ -321,22 +330,20 @@ namespace Editor_de_Grafos
             this.g.Dock = System.Windows.Forms.DockStyle.Fill;
             this.g.Location = new System.Drawing.Point(0, 24);
             this.g.Name = "g";
-            this.g.Size = new System.Drawing.Size(631, 401);
+            this.g.Size = new System.Drawing.Size(631, 411);
             this.g.TabIndex = 1;
             // 
-            // btNumCromatico
+            // btIndiceCromatico
             // 
-            this.btNumCromatico.Name = "btNumCromatico";
-            this.btNumCromatico.Size = new System.Drawing.Size(180, 22);
-            this.btNumCromatico.Text = "Número Cromático";
-            this.btNumCromatico.Click += new System.EventHandler(this.btNumCromatico_Click);
-            // 
+            this.btIndiceCromatico.Name = "btIndiceCromatico";
+            this.btIndiceCromatico.Size = new System.Drawing.Size(180, 22);
+            this.btIndiceCromatico.Text = "Índice Cromático";            // 
             // Editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(631, 425);
+            this.ClientSize = new System.Drawing.Size(631, 435);
             this.Controls.Add(this.g);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
@@ -387,6 +394,7 @@ namespace Editor_de_Grafos
         private ToolStripMenuItem btAGM;
         private ToolStripMenuItem btCaminhoMinimo;
         private ToolStripMenuItem btNumCromatico;
+        private ToolStripMenuItem btIndiceCromatico;
     }
 }
 
